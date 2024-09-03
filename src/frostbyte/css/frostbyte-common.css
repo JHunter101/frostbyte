@@ -242,3 +242,32 @@ lan {
 	bottom: 5%;
 	left: 5%;
 }
+
+/* Overlay */
+
+.overlay {
+	position: relative;
+}
+
+.overlay:first-child {
+	width: 100%;
+	height: inherit;
+	min-height: inherit;
+	object-fit: cover;
+	-webkit-filter: brightness(0.5);
+	filter: brightness(0.5);
+	-o-object-fit: cover;
+}
+
+.overlay:last-child {
+	width: 100%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	background: transparent;
+	text-shadow: 1px 1px 2px inherit;
+}
