@@ -76,31 +76,31 @@
 /*-------------------------------------------------------------- # Grids & Flex Section Start--------------------------------------------------------------*/
 
 .flex,
-.flex-col,
-.flex-row,
-.flex-responsive,
-.flex-responsive-rev {
+.flex--col,
+.flex--row,
+.flex--responsive,
+.flex--responsive-rev {
 	display: flex;
 	justify-content: center;
 	align-items: stretch;
 }
 
-.flex-col {
+.flex--col {
 	flex-direction: column;
 }
 
-.flex-row,
-.flex-responsive,
-.flex-resp-rev {
+.flex--row,
+.flex--responsive,
+.flex--resp-rev {
 	flex-direction: row;
 }
 
 @media (max-width: 1200px) {
-	.flex-responsive {
+	.flex--responsive {
 		flex-direction: column;
 	}
 
-	.flex-responsive-rev {
+	.flex--responsive-rev {
 		flex-direction: column-reverse;
 	}
 }
