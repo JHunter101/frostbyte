@@ -1,0 +1,211 @@
+/* Section Tuck */
+
+.screen--tuck {
+	padding-left: 20vw;
+	padding-right: 20vw;
+}
+
+.screen--tuck-tight {
+	padding-left: 30vw;
+	padding-right: 30vw;
+}
+
+.section--half-height {
+	padding-left: 15vw;
+	padding-right: 15vw;
+}
+
+.section--tuck-minimal {
+	padding-left: 5vw;
+	padding-right: 5vw;
+}
+
+@media (max-width: 1200px) {
+	.screen--tuck,
+	.screen--tuck-tight,
+	.screen--tuck-wide {
+		padding-left: 10vw;
+		padding-right: 10vw;
+	}
+}
+
+@media (max-width: 768px) {
+	.screen--tuck,
+	.screen--tuck-tight,
+	.screen--tuck-wide {
+		padding-left: 5vw;
+		padding-right: 5vw;
+	}
+}
+
+/* Container */
+
+.section {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	padding-top: 4vh;
+	padding-bottom: 4vh;
+}
+
+.section--accent,
+.section--accent * {
+	background-color: var(--color--accent-main);
+	color: var(--color--bg-main);
+}
+
+.section--alt,
+.section--alt * {
+	background-color: var(--alt-bg-color);
+}
+
+.section-border {
+	border-bottom: 2px solid var(--alt-accent-color);
+}
+
+.fill-height {
+	min-height: 100dvh;
+}
+
+.half-height {
+	min-height: 50dvh;
+}
+
+/*-------------------------------------------------------------- # Grids & Flex Section Start--------------------------------------------------------------*/
+
+.flex,
+.flex-col,
+.flex-row,
+.flex-responsive,
+.flex-responsive-rev {
+	display: flex;
+	justify-content: center;
+	align-items: stretch;
+}
+
+.flex-col {
+	flex-direction: column;
+}
+
+.flex-row,
+.flex-responsive,
+.flex-resp-rev {
+	flex-direction: row;
+}
+
+@media (max-width: 1200px) {
+	.flex-responsive {
+		flex-direction: column;
+	}
+
+	.flex-responsive-rev {
+		flex-direction: column-reverse;
+	}
+}
+
+.gap--small {
+	gap: min(4vh, 1rem);
+}
+
+.gap--medium {
+	gap: min(8vh, 2rem);
+}
+
+.gap--large {
+	gap: min(12vh, 3rem);
+}
+
+.align--reset {
+	align-items: unset !important;
+}
+.justify--reset {
+	justify-content: unset !important;
+}
+
+.align--start {
+	align-items: flex-start !important;
+}
+.justify--start {
+	justify-content: flex-start !important;
+}
+
+.align--center {
+	align-items: center !important;
+}
+.justify--center {
+	justify-content: center !important;
+}
+
+.align--end {
+	align-items: flex-end !important;
+}
+.justify--end {
+	justify-content: uflex-endnset !important;
+}
+
+.flex-1 {
+	flex: 1;
+}
+
+.flex-2 {
+	flex: 2;
+}
+
+.flex-3 {
+	flex: 3;
+}
+
+.flex-4 {
+	flex: 4;
+}
+
+.flex-5 {
+	flex: 5;
+}
+
+.flex-6 {
+	flex: 6;
+}
+
+.flex-7 {
+	flex: 7;
+}
+
+.flex-8 {
+	flex: 8;
+}
+
+.flex-9 {
+	flex: 9;
+}
+
+.flex-10 {
+	flex: 10;
+}
+
+.grid {
+	display: grid;
+}
+
+.grid-nest {
+	display: grid;
+	justify-items: center;
+	grid-template-columns: repeat(4, minmax(0, 1fr)); /* OVERWRITE ON USE */
+}
+
+.grid-nest > * {
+	display: grid;
+	grid-template-rows: subgrid;
+	padding: 0 min(6vw, 2rem);
+	width: 100%;
+}
+
+.grid-nest > * > *:first-child {
+	margin-top: min(8vh, 2rem);
+}
+
+.grid-nest > * > *:last-child {
+	margin-bottom: min(8vh, 2rem);
+}

@@ -1,0 +1,62 @@
+:root {
+	--color--black: rgb(0, 0, 0);
+	--color--black-off: rgb(25, 25, 25);
+	--color--white: rgb(255, 255, 255);
+	--color--white-off: rgb(250, 250, 250);
+	--color--grey: rgb(122, 122, 122);
+	--color--silver: rgb(176, 176, 176);
+
+	--color--red: rgb(255, 76, 76);
+	--color--orange: rgb(255, 135, 76);
+	--color--yellow: rgb(255, 211, 0);
+	--color--green: rgb(63, 182, 63);
+	--color--blue: rgb(83, 172, 228);
+	--color--purple: rgb(160, 100, 212);
+	--color--pink: rgb(255, 105, 180);
+
+	--color--bg-main: var(--color--black);
+	--color--accent-main: var(--color--white);
+	--color--bg-alt: var(--color--white);
+	--color--accent-alt: var(--color--black);
+}
+
+.bg--color-black {
+	background-color: var(--color--black);
+}
+.bg--color-black-off {
+	background-color: var(--color--black-off);
+}
+.bg--color-white {
+	background-color: var(--color--white);
+}
+.bg--color-white-off {
+	background-color: var(--color--white-off);
+}
+.bg--color-grey {
+	background-color: var(--color--grey);
+}
+.bg--color-silver {
+	background-color: var(--color--silver);
+}
+
+.bg--color-red {
+	background-color: var(--color--red);
+}
+.bg--color-orange {
+	background-color: var(--color--orange);
+}
+.bg--color-yellow {
+	background-color: var(--color--yellow);
+}
+.bg--color-green {
+	background-color: var(--color--green);
+}
+.bg--color-blue {
+	background-color: var(--color--blue);
+}
+.bg--color-purple {
+	background-color: var(--color--purple);
+}
+.bg--color-pink {
+	background-color: var(--color--pink);
+}

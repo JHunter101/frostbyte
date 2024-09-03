@@ -1,0 +1,33 @@
+.form {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	gap: min(4vh, 1rem);
+}
+
+.form select,
+.form input,
+.form button,
+.form textarea {
+	width: 100%;
+	border: 2px solid var(--color--accent-main);
+	padding: min(4vh, 1rem) min(3vw, 1rem);
+	text-align: left;
+	font-size: min(3.6vw, 1.2rem);
+	background-color: var(--color--bg-main);
+}
+
+.form textarea {
+	flex-grow: 1;
+}
+
+.form button {
+	text-align: center;
+}
+
+@media only screen and (max-width: 1200px) {
+	.form div {
+		grid-template-rows: initial;
+		grid-auto-flow: initial;
+	}
+}

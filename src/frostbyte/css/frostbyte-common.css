@@ -1,0 +1,244 @@
+/* Base */
+
+:root {
+}
+
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	display: block;
+	margin: 0px;
+	height: clamp(100dvh, 100dvh, 250vh);
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+	overflow-x: hidden;
+}
+
+main {
+	display: flex;
+	flex-direction: column;
+	min-height: 100dvh;
+	background: var(--color--bg-main);
+}
+
+main * {
+	font-family: var(--main-font);
+	color: var(--color--accent-main);
+}
+
+/* Common */
+
+lan {
+	display: hidden;
+}
+
+.hidden {
+	display: none !important;
+}
+
+.fit-content {
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: fit-content;
+	height: -webkit-fit-content;
+	height: -moz-fit-content;
+	height: fit-content;
+}
+
+@media (min-width: 1200px) {
+	.mobile-only {
+		display: none !important;
+	}
+}
+
+@media (max-width: 1200px) {
+	.desktop-only {
+		display: none !important;
+	}
+}
+
+.disable-dbl-tap-zoom {
+	touch-action: manipulation;
+}
+
+.clearfix:after {
+	content: '';
+	display: block;
+	clear: both;
+}
+
+/* Width & Height */
+
+.w100 {
+	width: 100%;
+}
+
+.w50 {
+	width: 50%;
+}
+
+.w85 {
+	width: 85%;
+}
+
+.w65 {
+	width: 65%;
+}
+
+.w35 {
+	width: 35%;
+}
+
+.h100 {
+	height: 100%;
+}
+
+.h50 {
+	height: 50%;
+}
+
+.h85 {
+	height: 85%;
+}
+
+.h65 {
+	height: 65%;
+}
+
+.h35 {
+	height: 35%;
+}
+
+/* Padding & Margin */
+
+.padding--small {
+	padding: min(4vh, 1rem) min(3vw, 1rem);
+}
+
+.padding--medium {
+	padding: min(8vh, 2rem) min(6vw, 2rem);
+}
+
+.padding--large {
+	padding: min(12vh, 3rem) min(9vw, 3rem);
+}
+
+.margin--small {
+	margin: min(4vh, 1rem) min(3vw, 1rem);
+}
+
+.margin--medium {
+	margin: min(8vh, 2rem) min(6vw, 2rem);
+}
+
+.margin--large {
+	margin: min(12vh, 3rem) min(9vw, 3rem);
+}
+
+.margin-none {
+	margin: 0 !important;
+}
+
+.margin-auto {
+	margin: auto;
+}
+
+/* Borders */
+
+.border--light {
+	box-shadow: 0 0 4px #ddd;
+	border: 1px solid #ddd;
+}
+
+.border--left {
+	border-left: 2px solid #ddd;
+}
+
+/* Buttons */
+
+.btn,
+.btn--main,
+.btn--accent {
+	width: 100%;
+	text-align: center;
+	display: inline-block;
+	border: 2px solid var(--color--accent-main);
+	background-color: var(--color--bg-main);
+	font-size: min(3.6vw, 1.2rem);
+	padding: min(2vh, 0.5rem) min(3.6vw, 1.2rem);
+}
+
+.btn:hover,
+.btn--main:hover {
+	cursor: pointer;
+	background-color: var(--color--accent-main);
+	color: var(--color--bg-main);
+}
+
+.btn--small {
+	font-size: min(3vw, 1rem);
+	padding: min(1vh, 0.25rem) min(3vw, 1rem);
+}
+
+.btn--large {
+	font-size: min(4.5vw, 1.5rem);
+	padding: min(3vh, 0.75rem) min(4.5vw, 1.5rem);
+}
+
+.btn--accent {
+	background-color: var(--color--accent-main);
+	border-color: var(--color--bg-main);
+}
+
+.btn--accent:hover {
+	background-color: var(--color--bg-main);
+	color: var(--color--accent-main);
+}
+
+/* Tooltips */
+
+.tooltip {
+	position: relative;
+	border-bottom: 2px dashed var(--color--bg-main);
+	cursor: help;
+}
+
+.tooltip:before {
+	z-index: 9999;
+	content: attr(tooltip);
+	position: absolute;
+	bottom: 100%;
+	width: 0px;
+	height: 0px;
+	font-size: 0px;
+	background-color: var(--color--bg-main);
+	text-align: center;
+	opacity: 0;
+}
+
+.tooltip:hover:before {
+	width: min(50vw, 300px);
+	height: unset;
+	font-size: min(3.6vw, 1.2rem);
+	padding: min(4vh, 1rem) min(3vw, 1rem);
+	border-radius: min(4vh, 1rem) min(3vw, 1rem);
+	opacity: 1;
+}
+
+.tooltip--grow-left:before {
+	right: 0%;
+}
+
+.tooltip--grow-right:before {
+	left: 0%;
+}
+
+.tooltip--position-fixed:before {
+	position: fixed;
+	bottom: 5%;
+	left: 5%;
+}
