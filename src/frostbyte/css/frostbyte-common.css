@@ -244,12 +244,11 @@ lan {
 }
 
 /* Overlay */
-
 .overlay {
 	position: relative;
 }
 
-.overlay:first-child {
+.overlay > *:first-child {
 	width: 100%;
 	height: inherit;
 	min-height: inherit;
@@ -257,7 +256,7 @@ lan {
 	-o-object-fit: cover;
 }
 
-.overlay:last-child {
+.overlay > *:last-child {
 	width: 100%;
 	position: absolute;
 	top: 50%;
@@ -267,5 +266,4 @@ lan {
 	flex-direction: column;
 	text-align: center;
 	background: transparent;
-	text-shadow: 1px 1px 2px inherit;
 }
