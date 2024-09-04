@@ -199,7 +199,8 @@
 	display: grid;
 	grid-template-rows: subgrid;
 	padding: 0 min(6vw, 2rem);
-	width: 100%;
+	grid-row: span 2; /* OVERWRITE ON USE */
+	text-align: center;
 }
 
 .grid-nest > * > *:first-child {

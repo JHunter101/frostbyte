@@ -1,17 +1,17 @@
 "use strict";
-function spoiler(elem) {
-    elem.classList.toggle('blur');
-}
-function addClass(elem, classA) {
+function classAdd(elem, classA) {
     elem.classList.add(classA);
 }
-function removeClass(elem, classA) {
+function classRemove(elem, classA) {
     elem.classList.remove(classA);
 }
-function toggleClass(elem, classA) {
+function classToggle(elem, classA) {
     elem.classList.toggle(classA);
 }
-function swapClass(elem, classA, classB) {
+function spoilerToggle(elem) {
+    classToggle(elem, 'blur');
+}
+function classSwap(elem, classA, classB) {
     if (elem.classList.contains(classA)) {
         elem.classList.remove(classA);
         elem.classList.add(classB);
@@ -21,18 +21,18 @@ function swapClass(elem, classA, classB) {
         elem.classList.add(classA);
     }
 }
-function toggle_elem(elem) {
+function displayToggle(elem) {
     const element = document.getElementById(elem);
     const classesToCheck = ['hidden', 'desktop-only', 'mobile-only'];
     const hasAnyClass = classesToCheck.some((className) => element.classList.contains(className));
     if (hasAnyClass) {
-        unhide_elem(elem);
+        unhide(elem);
     }
     else {
-        hide_elem(elem);
+        hide(elem);
     }
 }
-function unhide_elem(elem) {
+function unhide(elem) {
     const element = document.getElementById(elem);
     if (element.classList.contains('hidden')) {
         element.classList.remove('hidden');
@@ -46,7 +46,7 @@ function unhide_elem(elem) {
         element.classList.add('desktop-only-off');
     }
 }
-function hide_elem(elem) {
+function hide(elem) {
     const element = document.getElementById(elem);
     if (element.classList.contains('mobile-only-off')) {
         element.classList.remove('mobile-only-off');
@@ -60,15 +60,8 @@ function hide_elem(elem) {
         element.classList.add('hidden');
     }
 }
-function clearBox(elem) {
+function clear(elem) {
     document.getElementById(elem).innerHTML = '';
-}
-function range(start, end, step = 1) {
-    const result = [];
-    for (let i = start; i < end; i += step) {
-        result.push(i);
-    }
-    return result;
 }
 function indexDictExtract(indexes, dict) {
     const output = {};
@@ -84,26 +77,24 @@ function indexDictExtract(indexes, dict) {
     }
     return output;
 }
-function swap_elems(elem1, elem2) {
-    // If elem1 or elem2 is a string, treat it as an ID and find the element.
-    // Otherwise, assume it's already an HTMLElement.
+function swapElems(elem1, elem2, animate) {
     const div1 = typeof elem1 === 'string' ? document.getElementById(elem1) : elem1;
     const div2 = typeof elem2 === 'string' ? document.getElementById(elem2) : elem2;
     if (div1 && div2) {
-        // Swap the elements
         const tempContent = div1.innerHTML;
         div1.innerHTML = div2.innerHTML;
         div2.innerHTML = tempContent;
-        div1.classList.add('slide-in-right');
-        div2.classList.add('slide-in-left');
-        // Clean up classes after animation
-        setTimeout(() => {
-            div1.classList.remove('slide-in-right');
-            div2.classList.remove('slide-in-left');
-        }, 500); // Match the duration of the sliding animation
+        if (animate) {
+            div1.classList.add('slide-in-right');
+            div2.classList.add('slide-in-left');
+            setTimeout(() => {
+                div1.classList.remove('slide-in-right');
+                div2.classList.remove('slide-in-left');
+            }, 500);
+        }
     }
 }
-function find_local_elem(root, targetClass) {
+function findElemFromRoot(root, targetClass) {
     const rootDiv = typeof root === 'string'
         ? document.getElementById(root)
         : root;

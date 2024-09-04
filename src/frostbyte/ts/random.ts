@@ -46,7 +46,6 @@ function weightedRandomTable(myList: { weight: number }[]) {
 }
 
 // Given a look up table created by weightedRandomTable return a random item from the table
-
 function weightedRandom(tableData: { [key: number]: any }) {
   const i = Math.floor(seededRandom() * Object.keys(tableData).length);
   return tableData[i];
