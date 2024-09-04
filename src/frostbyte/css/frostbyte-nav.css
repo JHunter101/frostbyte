@@ -264,3 +264,23 @@ footer .section-container {
 	border-top: min(0.25vh, 0.0625rem) solid var(--alt-accent-color);
 	justify-content: space-between;
 }
+
+#footer--one-row {
+	position: absolute;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	bottom: 0;
+	width: 100%;
+	padding: 2vh 0;
+}
+
+#footer--one-row > * {
+	padding: 0 1.5vw;
+	border-left: 1px solid var(--color--white);
+	border-right: 1px solid var(--color--white);
+}
+
+#footer--one-row a {
+	color: var(--color--red);
+}
